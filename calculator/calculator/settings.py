@@ -76,8 +76,12 @@ WSGI_APPLICATION = "calculator.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",  # Use the default PostgreSQL database
+        "USER": "postgres",
+        "PASSWORD": "pum11",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
