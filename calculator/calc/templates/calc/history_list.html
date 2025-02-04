@@ -1,0 +1,5 @@
+{% for calc in calculations %}
+<p>{{ calc.expression }}</p>
+{% empty %}
+<p>No history yet.</p>
+{% endfor %}

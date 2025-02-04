@@ -8,6 +8,10 @@
 
 <body>
   <h1>Tidigare kalkyler</h1>
+
+  <div id="history-container" hx-get="{% url 'history' %}" hx-trigger="load" hx-swap="innerHTML">
+  </div>
+
 </body>
 
 </html>
