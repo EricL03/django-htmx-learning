@@ -119,6 +119,8 @@ operationButtons.forEach(operation => {
 equalsButton.addEventListener("click", () => {
     //result.value = "yay!!!";  
     //console.log(data); 
+    let expression = document.getElementById("expression"); 
+    expression.value = "yay"; 
     
     // Evaluate all percentages in equation
     evalPercentages(); 
@@ -136,7 +138,7 @@ equalsButton.addEventListener("click", () => {
     evalOperations("-"); 
 
     
-    console.log(data); 
+    //console.log(data); 
     result.value = data[0]; 
 });
 

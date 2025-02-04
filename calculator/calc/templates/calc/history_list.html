@@ -1,5 +1,5 @@
 {% for calc in calculations %}
-<p>{{ calc.expression }}</p>
+<p>{{ calc.expression }} = {{ calc.result }}</p>
 {% empty %}
 <p>No history yet.</p>
 {% endfor %}

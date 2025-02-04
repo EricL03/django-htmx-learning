@@ -14,6 +14,7 @@
 <body>
   <div class="calculator">
     <textarea name="result" id="result" class="result" readonly></textarea>
+    <textarea name="expression" id="expression" class="expression" ></textarea>
 
     <div class="buttons">
       <button class="clear">C</button>
@@ -42,7 +43,7 @@
           <button class="equals" 
             hx-post="{% url 'save_calculation' %}" 
             hx-trigger="click" 
-            hx-include="#result" 
+            hx-include="#expression, #result" 
             hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML">
             =</button>
     </div>

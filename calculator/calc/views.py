@@ -7,11 +7,14 @@ from .models import Calculation
 @csrf_exempt  # ⬅️ Bypasses CSRF for this view
 def save_calculation(request):
     if request.method == "POST":
-        expression = request.POST.get("result", "").strip()
+        print("request: ", request.POST)
 
-        if expression:
+        result = request.POST.get("result", "").strip()
+        expression = request.POST.get("expression", "").strip()
+
+        if expression and result:
             # Save calculation to database
-            Calculation.objects.create(expression=expression)
+            Calculation.objects.create(expression=expression, result=result)
 
             # Return a partial HTML snippet to update the history section
             return HttpResponse(status=204)
