@@ -8,13 +8,12 @@
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-  <script defer src="{% static 'js/index.js' %}"></script>
 </head>
 
 <body>
   <div class="calculator">
     <textarea name="result" id="result" class="result" readonly></textarea>
-    <textarea name="expression" id="expression" class="expression" ></textarea>
+    <textarea name="expression" id="expression" class="expression" hidden></textarea>
 
     <div class="buttons">
       <button class="clear">C</button>
@@ -48,6 +47,8 @@
             =</button>
     </div>
   </div>
+  
+  <script src="{% static 'js/index.js' %}"></script>
 </body>
 
 </html>
