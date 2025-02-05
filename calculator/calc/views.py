@@ -1,5 +1,5 @@
 from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Calculation
 
@@ -29,3 +29,11 @@ def index(request):
 def history(request):
     calculations = Calculation.objects.order_by("-created_at")  # Latest first
     return render(request, "calc/history_list.html", {"calculations": calculations})
+
+
+@csrf_exempt  # ⬅️ Bypasses CSRF for this view
+def history_page(request):
+    if request.headers.get("HX-Request"):
+        return HttpResponse(headers={"HX-Redirect": "/history/"})  # Redirects in HTMX
+
+    return redirect("history")  # Normal Django redirect for non-HTMX requests

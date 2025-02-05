@@ -25,7 +25,13 @@
 
       <div class="buttons">
         <button class="clear">C</button>
-        <button class="history">H</button>
+        <button
+          class="history"
+          hx-post="{% url 'history_page' %}"
+          hx-trigger="click"
+        >
+          H
+        </button>
         <button class="percent operation" data-value="%">%</button>
         <button class="division operation" data-value="/">/</button>
 
