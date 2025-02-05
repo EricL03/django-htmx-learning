@@ -102,19 +102,19 @@ button.remove:active {
   /* Darker red */
 }
 
-button.parentheses,
+button.history,
 button.comma {
   background-color: #adb5bd;
   /* Parentheses and Comma: Gray */
   color: #212529;
 }
 
-button.parentheses:hover,
+button.history:hover,
 button.comma:hover {
   background-color: #ced4da;
 }
 
-button.parentheses:active,
+button.history:active,
 button.comma:active {
   background-color: #868e96;
 }

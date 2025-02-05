@@ -1,51 +1,64 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-</head>
+  <body>
+    <div class="calculator">
+      <textarea name="result" id="result" class="result" readonly></textarea>
+      <textarea
+        name="expression"
+        id="expression"
+        class="expression"
+        hidden
+      ></textarea>
 
-<body>
-  <div class="calculator">
-    <textarea name="result" id="result" class="result" readonly></textarea>
-    <textarea name="expression" id="expression" class="expression" hidden></textarea>
+      <div class="buttons">
+        <button class="clear">C</button>
+        <button class="history">H</button>
+        <button class="percent operation" data-value="%">%</button>
+        <button class="division operation" data-value="/">/</button>
 
-    <div class="buttons">
-      <button class="clear">C</button>
-      <button class="parentheses">()</button>
-      <button class="percent operation" data-value="%">%</button>
-      <button class="division operation" data-value="/">/</button>
+        <button class="number" data-value="7">7</button>
+        <button class="number" data-value="8">8</button>
+        <button class="number" data-value="9">9</button>
+        <button class="multiplication operation" data-value="*">*</button>
 
-      <button class="number" data-value="7">7</button>
-      <button class="number" data-value="8">8</button>
-      <button class="number" data-value="9">9</button>
-      <button class="multiplication operation" data-value="*">*</button>
+        <button class="number" data-value="4">4</button>
+        <button class="number" data-value="5">5</button>
+        <button class="number" data-value="6">6</button>
+        <button class="minus operation" data-value="-">-</button>
 
-      <button class="number" data-value="4">4</button>
-      <button class="number" data-value="5">5</button>
-      <button class="number" data-value="6">6</button>
-      <button class="minus operation" data-value="-">-</button>
+        <button class="number" data-value="1">1</button>
+        <button class="number" data-value="2">2</button>
+        <button class="number" data-value="3">3</button>
+        <button class="plus operation" data-value="+">+</button>
 
-      <button class="number" data-value="1">1</button>
-      <button class="number" data-value="2">2</button>
-      <button class="number" data-value="3">3</button>
-      <button class="plus operation" data-value="+">+</button>
-
-      <button class="remove">R</button>
-      <button class="number">0</button>
-      <button class="comma">,</button>
-      <button class="equals" hx-post="{% url 'save_calculation' %}" hx-trigger="click" hx-include="#expression, #result"
-        hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML">
-        =</button>
+        <button class="remove">R</button>
+        <button class="number">0</button>
+        <button class="comma">,</button>
+        <button
+          class="equals"
+          hx-post="{% url 'save_calculation' %}"
+          hx-trigger="click"
+          hx-include="#expression, #result"
+          hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML"
+        >
+          =
+        </button>
+      </div>
     </div>
-  </div>
 
-  <script src="{% static 'js/index.js' %}"></script>
-</body>
-
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
 </html>

@@ -8,7 +8,6 @@ const removeButton = document.querySelector(".remove");
 const numberButtons = document.querySelectorAll(".number");
 const operationButtons = document.querySelectorAll(".operation");
 const commaButton = document.querySelector(".comma");
-const parenthesesButton = document.querySelector(".parentheses");
 const equalsButton = document.querySelector(".equals");
 
 // Global variables
@@ -55,21 +54,6 @@ removeButton.addEventListener("click", () => {
       // We have removed an operation, hence a number is opened 
       numberOpened = true;
     }
-  }
-});
-
-parenthesesButton.addEventListener("click", () => {
-  parenthesesAdded = true;
-
-  if (parenthesesOpened) {
-    result.value += ")";
-    data.push(")");
-    parenthesesOpened = false;
-  }
-  else {
-    result.value += "(";
-    data.push("(");
-    parenthesesOpened = true;
   }
 });
 

@@ -1,17 +1,18 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>Kalkylator historik</title>
+  </head>
 
-<head>
-  <title>Kalkylator historik</title>
-</head>
+  <body>
+    <h1>Tidigare kalkyler</h1>
 
-<body>
-  <h1>Tidigare kalkyler</h1>
-
-  <div id="history-container" hx-get="{% url 'history' %}" hx-trigger="load" hx-swap="innerHTML">
-  </div>
-
-</body>
-
+    <div
+      id="history-container"
+      hx-get="{% url 'history' %}"
+      hx-trigger="load"
+      hx-swap="innerHTML"
+    ></div>
+  </body>
 </html>
