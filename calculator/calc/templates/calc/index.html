@@ -36,18 +36,15 @@
       <button class="number" data-value="3">3</button>
       <button class="plus operation" data-value="+">+</button>
 
-      <button class="remove"><--< /button>
-          <button class="number">0</button>
-          <button class="comma">,</button>
-          <button class="equals" 
-            hx-post="{% url 'save_calculation' %}" 
-            hx-trigger="click" 
-            hx-include="#expression, #result" 
-            hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML">
-            =</button>
+      <button class="remove">R</button>
+      <button class="number">0</button>
+      <button class="comma">,</button>
+      <button class="equals" hx-post="{% url 'save_calculation' %}" hx-trigger="click" hx-include="#expression, #result"
+        hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML">
+        =</button>
     </div>
   </div>
-  
+
   <script src="{% static 'js/index.js' %}"></script>
 </body>
 
