@@ -19,7 +19,7 @@ def save_calculation(request):
             # Return a partial HTML snippet to update the history section
             return HttpResponse(status=204)
 
-        return HttpResponse(status=400)  # Bad request if no expression
+    return HttpResponse(status=400)  # Bad request if no expression
 
 
 def index(request):
