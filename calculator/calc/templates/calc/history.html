@@ -2,7 +2,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkylator historik</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/history.css' %}"
+    />
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
   </head>
 
   <body>
@@ -10,9 +18,13 @@
 
     <div
       id="history-container"
-      hx-get="{% url 'history' %}"
+      hx-get="{% url 'history_elem' %}"
       hx-trigger="load"
       hx-swap="innerHTML"
     ></div>
+
+    <button class="return" hx-get="{% url 'go_to_calc' %}" hx-trigger="click">
+      Return
+    </button>
   </body>
 </html>

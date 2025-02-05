@@ -26,9 +26,21 @@ def index(request):
     return render(request, "calc/index.html")
 
 
+def display_history_page(request):
+    return render(request, "calc/history.html")
+
+
 def history(request):
     calculations = Calculation.objects.order_by("-created_at")  # Latest first
     return render(request, "calc/history_list.html", {"calculations": calculations})
+
+
+@csrf_exempt  # ⬅️ Bypasses CSRF for this view
+def go_to_calc(request):
+    if request.headers.get("HX-Request"):
+        return HttpResponse(headers={"HX-Redirect": "/"})  # Redirects in HTMX
+
+    return redirect("")  # Normal Django redirect for non-HTMX requests
 
 
 @csrf_exempt  # ⬅️ Bypasses CSRF for this view

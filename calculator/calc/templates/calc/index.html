@@ -58,7 +58,7 @@
           hx-post="{% url 'save_calculation' %}"
           hx-trigger="click"
           hx-include="#expression, #result"
-          hx-on::after-request="hx-get:{% url 'history' %} hx-target:#history-container hx-swap:innerHTML"
+          hx-on::after-request="hx-get:{% url 'history_elem' %} hx-target:#history-container hx-swap:innerHTML"
         >
           =
         </button>
