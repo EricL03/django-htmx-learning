@@ -7,6 +7,3 @@ button on the calculator, you can then return by pressing the "return" button
 
 ## TODOs:
 * Clean up after late gitignore implementation
-* Research about authentication using django-admin
-* Research about CSRF-tokens 
-* Research about other secret password in the code...
