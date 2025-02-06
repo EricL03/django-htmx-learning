@@ -16,15 +16,15 @@
   <body>
     <h1>Tidigare kalkyler</h1>
 
+    <button class="return" hx-get="{% url 'go_to_calc' %}" hx-trigger="click">
+      Return
+    </button>
+
     <div
       id="history-container"
       hx-get="{% url 'history_elem' %}"
       hx-trigger="load"
       hx-swap="innerHTML"
     ></div>
-
-    <button class="return" hx-get="{% url 'go_to_calc' %}" hx-trigger="click">
-      Return
-    </button>
   </body>
 </html>
