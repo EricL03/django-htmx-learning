@@ -1,11 +1,11 @@
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Calculation
 from django.contrib.auth.decorators import login_required
 
 
-@csrf_exempt  # ⬅️ Bypasses CSRF for this view
+@csrf_protect
 def save_calculation(request):
     if request.method == "POST":
         print("request: ", request.POST)
@@ -37,7 +37,6 @@ def history(request):
     return render(request, "calc/history_list.html", {"calculations": calculations})
 
 
-@csrf_exempt  # ⬅️ Bypasses CSRF for this view
 def go_to_calc(request):
     if request.headers.get("HX-Request"):
         return HttpResponse(headers={"HX-Redirect": "/"})  # Redirects in HTMX
@@ -45,7 +44,6 @@ def go_to_calc(request):
     return redirect("")  # Normal Django redirect for non-HTMX requests
 
 
-@csrf_exempt  # ⬅️ Bypasses CSRF for this view
 def history_page(request):
     if request.headers.get("HX-Request"):
         return HttpResponse(headers={"HX-Redirect": "/history/"})  # Redirects in HTMX

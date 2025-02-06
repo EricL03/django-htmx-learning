@@ -37,7 +37,7 @@
         <button class="clear">C</button>
         <button
           class="history"
-          hx-post="{% url 'history_page' %}"
+          hx-get="{% url 'history_page' %}"
           hx-trigger="click"
         >
           H
@@ -63,15 +63,16 @@
         <button class="remove">R</button>
         <button class="number">0</button>
         <button class="comma">,</button>
-        <button
-          class="equals"
+        <form
+          method="post"
           hx-post="{% url 'save_calculation' %}"
           hx-trigger="click"
           hx-include="#expression, #result"
           hx-on::after-request="hx-get:{% url 'history_elem' %} hx-target:#history-container hx-swap:innerHTML"
         >
-          =
-        </button>
+          {% csrf_token %}
+          <button class="equals" type="submit">=</button>
+        </form>
       </div>
     </div>
 
