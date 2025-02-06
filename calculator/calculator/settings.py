@@ -28,6 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/login/"
+
+LOGIN_URL = "/login/"
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Logout when browser closes
+SESSION_COOKIE_AGE = 1209600  # 2 weeks (default)
+# SESSION_COOKIE_SECURE = False  # Change to True if using HTTPS
+SESSION_SAVE_EVERY_REQUEST = True  # Ensures session updates every request
 
 # Application definition
 

@@ -2,6 +2,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Calculation
+from django.contrib.auth.decorators import login_required
 
 
 @csrf_exempt  # ⬅️ Bypasses CSRF for this view
@@ -22,6 +23,7 @@ def save_calculation(request):
     return HttpResponse(status=400)  # Bad request if no expression
 
 
+@login_required
 def index(request):
     return render(request, "calc/index.html")
 
