@@ -1,4 +1,4 @@
-# Lärdomar från django och htmx
+# Django and htmx learnings
 
 ## 1. Installation & Setup
 
@@ -28,7 +28,9 @@ venv\Scripts\activate
 ```sh
 deactivate
 ```
-### **Warning: From here on the virtual environment need to be activated!**
+### **Warning: From here on the virtual environment needs to be activated!**
+If the virtual environment is deactivate or the terminal is restarted the 
+venv needs to be activated again!
 
 3. **Upgrade/install pip:**
 ```sh
