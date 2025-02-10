@@ -7,20 +7,15 @@
 Before installing Django, ensure you have the following installed:
 
 - **Python** (Recommended version: 3.10+)
-- **pip** (Python package manager)
 
 #### Installation steps
 Use python3 instead of python for MacOS and Linux!
 
-1. **Upgrade/install pip:**
-```sh
-python -m pip install --upgrade pip
-```
-2. **Create a virtual environment**
+1. **Create a virtual environment**
 ```sh
 python -m venv venv
 ```
-3. **Activate the virtual environment:**
+2. **Activate the virtual environment:**
 * MacOS and Linux
 ```sh
 source venv/bin/activate
@@ -28,6 +23,10 @@ source venv/bin/activate
 * Windows
 ```sh
 venv\Scripts\activate
+```
+3. **Upgrade/install pip:**
+```sh
+python -m pip install --upgrade pip
 ```
 4. **Install required packages:**
 ```sh
@@ -40,6 +39,7 @@ django-admin --version
 
 
 ## 2. Project Initialization
+Make sure to replace all instances of "myproject" and "myapp" with you desired names!
 
 ### Creating a Django Project
 1. **Create a new Django project:**
@@ -74,33 +74,34 @@ mkdir -p myapp/static myapp/templates
 2. **Update settings.py to use these directories:**
 ```python
 import os
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main/static'),
+    os.path.join(BASE_DIR, "myapp", "static"),
 ]
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'main/templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "myapp", "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 ```
 ### Setting Up HTMX
-1. **Include HTMX in the base HTML file:**
-Create main/templates/index.html and include the HTMX script:
+1. **Include HTMX in the index HTML file:**
+Create myapp/templates/index.html and include the HTMX script:
 ```html
 <!DOCTYPE html>
 <html lang="en">
