@@ -24,6 +24,12 @@ source venv/bin/activate
 ```sh
 venv\Scripts\activate
 ```
+2.1. **Deactivate the virtual environment:**
+```sh
+deactivate
+```
+### **Warning: From here on the virtual environment need to be activated!**
+
 3. **Upgrade/install pip:**
 ```sh
 python -m pip install --upgrade pip
@@ -179,4 +185,4 @@ python manage.py runserver
 ```sh
 http://127.0.0.1:8000/admin/
 ```
-4. **Enter the username and password you set for the superuser**
+4. **Enter the username and password you set for the admin user**
