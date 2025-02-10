@@ -123,9 +123,36 @@ Start the Django development server:
 ```sh
 python manage.py runserver
 ```
-Now, you can visit http://127.0.0.1:8000/ to see the project running
+Now, you can visit http://127.0.0.1:8000/ to see the standard django welcome page! 
 
 
 ## 3. Building Features (Using Django with HTMX, database integration, etc.)
+
+### Setup basic routes
+1. **Render index.html file by modifying myapp/views.py**
+```python
+def index(request):
+    return render(request, "index.html")
+```
+2. **Create a myapp/urls.py file and add the following:**
+```python
+from django.urls import path
+from .views import index
+
+urlpatterns = [
+    path("", index, name="name"),
+]
+```
+3. **Add the myapp urls to myproject/urls.py:**
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("myapp.urls")),  # Includes URLs from myapp
+]
+```
+
 
 ## 4. Deployment & Best Practices
