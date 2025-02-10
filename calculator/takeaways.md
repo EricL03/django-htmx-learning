@@ -153,6 +153,30 @@ urlpatterns = [
     path("", include("myapp.urls")),  # Includes URLs from myapp
 ]
 ```
+### Run you index page
+1. **Migrate database changes:**
+```sh
+python manage.py migrate
+```
+2. **Run the website:**
+```sh
+python manage.py runserver
+```
 
 
 ## 4. Deployment & Best Practices
+
+### Create an admin user and log in to the admin panel
+1. **Run the following command and follow the prompts to enter a username, email, and password:**
+```sh
+python manage.py createsuperuser
+```
+2. **Run the server:**
+```sh
+python manage.py runserver
+```
+3. **Open your browser and go to:**
+```sh
+http://127.0.0.1:8000/admin/
+```
+4. **Enter the username and password you set for the superuser**
