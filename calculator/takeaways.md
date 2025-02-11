@@ -76,6 +76,7 @@ INSTALLED_APPS = [
 ```
 ### Configuring Static Files
 1. **Create directories for static files and templates:**
+**Warning: This does not work on windows, create the directories manually istead!**
 ```sh
 mkdir -p myapp/static myapp/templates
 ```
