@@ -188,3 +188,51 @@ python manage.py runserver
 http://127.0.0.1:8000/admin/
 ```
 4. **Enter the username and password you set for the admin user**
+
+### Setup formatters and lsps (for VsCode)
+1. **Install required extension** 
+  * Ruff
+  * Prettier - Code formatter
+Search for the extension listed above in the search field after pressing 
+the 'Extension' symbol in the navbar to the left. The extensions are 
+popular so they should be at the top of the results. 
+
+2. **Press Control+Shift+P when in VsCode and enter:**
+```sh 
+Preferences: Open User Settings (JSON)
+```
+3. **Add the following configurations to enable all formatters and lsps:**
+```sh 
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on", // Enables line wrapping
+  "html.format.wrapLineLength": 80, // Adjust wrapping length
+
+  // LSP Configuration
+  "files.associations": {
+    "*.htmx": "html" // Treat .htmx files as HTML
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // Enable LSPs
+  "htmx.enable": true,
+  "html.suggest.html5": true,
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+
+  // Prettier Specific Configuration
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Python Formatting with Ruff
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  }
+```
