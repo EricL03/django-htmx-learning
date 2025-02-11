@@ -75,7 +75,7 @@ INSTALLED_APPS = [
 ]
 ```
 ### Configuring Static Files
-1. **Create directories for static files and templates:**
+1. **Create directories for static files and templates:**\
 **Warning: This does not work on windows, create the directories manually istead!**
 ```sh
 mkdir -p myapp/static myapp/templates
@@ -193,7 +193,7 @@ http://127.0.0.1:8000/admin/
 ### Setup formatters and lsps (for VsCode)
 1. **Install required extension** 
   * Ruff
-  * Prettier - Code formatter
+  * Prettier - Code formatter\
 Search for the extension listed above in the search field after pressing 
 the 'Extension' symbol in the navbar to the left. The extensions are 
 popular so they should be at the top of the results. 
