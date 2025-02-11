@@ -194,16 +194,16 @@ http://127.0.0.1:8000/admin/
 1. **Install required extension** 
   * Ruff
   * Prettier - Code formatter\
-Search for the extension listed above in the search field after pressing 
+**Search for the extension listed above in the search field after pressing 
 the 'Extension' symbol in the navbar to the left. The extensions are 
-popular so they should be at the top of the results. 
+popular so they should be at the top of the results.** 
 
 2. **Press Control+Shift+P when in VsCode and enter:**
 ```sh 
 Preferences: Open User Settings (JSON)
 ```
 3. **Add the following configurations to enable all formatters and lsps:**
-```sh 
+```JSON
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.wordWrap": "on", // Enables line wrapping
