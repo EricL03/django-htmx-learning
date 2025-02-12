@@ -87,10 +87,10 @@ WSGI_APPLICATION = "calculator.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",  # Use the default PostgreSQL database
-        "USER": "postgres",
+        "NAME": "expression_db",
+        "USER": "expression_db",
         "PASSWORD": "pum11",
-        "HOST": "localhost",
+        "HOST": "192.168.1.64",
         "PORT": "5432",
     }
 }
