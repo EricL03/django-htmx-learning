@@ -244,7 +244,7 @@ http://127.0.0.1:8000/admin/
 
 4. **Enter the username and password you set for the admin user**
 
-### Setup formatters and lsps (for VsCode)
+### Setup formatters and lsps (for VSCode)
 
 1. **Install required extension**
 
@@ -255,7 +255,7 @@ http://127.0.0.1:8000/admin/
   the 'Extension' symbol in the navbar to the left. The extensions are
   popular so they should be at the top of the results.**
 
-2. **Press Control+Shift+P when in VsCode and enter:**
+2. **Press Control+Shift+P when in VSCode and enter:**
 
 ```sh
 Preferences: Open User Settings (JSON)
@@ -357,7 +357,7 @@ Preferences: Open User Settings (JSON)
   "python.terminal.activateEnvironment": true
 ```
 
-**Warning: If VsCode is not formatting files on save and/or giving code suggestions/warnings
+**Warning: If VSCode is not formatting files on save and/or giving code suggestions/warnings
 something is wrong.**
 
 **Debug help:**
@@ -366,6 +366,6 @@ something is wrong.**
    root according to the steps in section 1.
 2. Make sure all necessary pip packages are installed, otherwise Pylance will show warnings on imports it can not find.
 3. If issues remain try staring VsCode from a terminal, located in the project root directory with the virtual
-   environment manually activated, by typing `code` ." in the terminal.
-4. If issues still remain try to disable extensions installed in your VsCode that could mess with the extension
+   environment manually activated, by typing `code .` in the terminal.
+4. If issues still remain try to disable extensions installed in your VSCode that could mess with the extension
    used in this config, for example python or html snippets or formatting extension.
