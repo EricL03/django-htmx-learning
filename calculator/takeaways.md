@@ -263,19 +263,6 @@ Preferences: Open User Settings (JSON)
 
 3. **Add the following configurations to enable all formatters and lsps:**
 
-**Warning: If VsCode is not formatting files on save and/or giving code suggestions/warnings
-something is wrong.**
-
-**Debug help:**
-
-1. Make sure a virtual environment named "venv" exists beside the project
-   root according to the steps in section 1.
-2. Make sure all necessary pip packages are installed, otherwise Pylance will show warnings on imports it can not find.
-3. If issues remain try staring VsCode from a terminal, located in the project root directory with the virtual
-   environment manually activated, by typing "code ." in the terminal.
-4. If issues still remain try to disable extensions installed in your VsCode that could mess with the extension
-   used in this config, for example python or html snippets or formatting extension.
-
 - MacOS and Linux
 
 ```JSON
@@ -369,3 +356,16 @@ something is wrong.**
   "python.defaultInterpreterPath": "venv\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true
 ```
+
+**Warning: If VsCode is not formatting files on save and/or giving code suggestions/warnings
+something is wrong.**
+
+**Debug help:**
+
+1. Make sure a virtual environment named "venv" exists beside the project
+   root according to the steps in section 1.
+2. Make sure all necessary pip packages are installed, otherwise Pylance will show warnings on imports it can not find.
+3. If issues remain try staring VsCode from a terminal, located in the project root directory with the virtual
+   environment manually activated, by typing `code` ." in the terminal.
+4. If issues still remain try to disable extensions installed in your VsCode that could mess with the extension
+   used in this config, for example python or html snippets or formatting extension.
