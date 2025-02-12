@@ -193,6 +193,7 @@ http://127.0.0.1:8000/admin/
 ### Setup formatters and lsps (for VsCode)
 1. **Install required extension** 
   * Ruff
+  * Pyright
   * Prettier - Code formatter\
 **Search for the extension listed above in the search field after pressing 
 the 'Extension' symbol in the navbar to the left. The extensions are 
@@ -235,5 +236,15 @@ Preferences: Open User Settings (JSON)
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true
-  }
+  },
+
+  // Python LSP (Pyright)
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.languageServer": "Pylance", // Pylance uses Pyright under the hood
+
+  // VS Code Python Settings
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.terminal.activateEnvironment": true
 ```
