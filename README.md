@@ -7,3 +7,4 @@ button on the calculator, you can then return by pressing the "return" button
 
 ## TODOs:
 * Clean up after late gitignore implementation
+* Research about logging
