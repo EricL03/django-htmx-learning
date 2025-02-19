@@ -3,10 +3,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Calculation
 from django.contrib.auth.decorators import login_required
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 @csrf_protect
 def save_calculation(request):
+    logger.info("In save_calculation")
     if request.method == "POST":
         print("request: ", request.POST)
 
@@ -20,6 +24,7 @@ def save_calculation(request):
             # Return a partial HTML snippet to update the history section
             return HttpResponse(status=204)
 
+    logger.warning("No calculation could be saved")
     return HttpResponse(status=400)  # Bad request if no expression
 
 
