@@ -4,7 +4,3 @@ It is based on an already functioning calculator, written in "basic" html, css a
 In this project I have integrated it into a django-backend and also used HTMX to make a history page
 where expressions and their result is stored. The history page is loaded by pressing the H (history)
 button on the calculator, you can then return by pressing the "return" button
-
-## TODOs:
-* Clean up after late gitignore implementation
-* Research about logging
